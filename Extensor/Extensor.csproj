@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="packages\NuGet.Build.Packaging.0.2.0\build\NuGet.Build.Packaging.props" Condition="Exists('packages\NuGet.Build.Packaging.0.2.0\build\NuGet.Build.Packaging.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{DB84AEDD-2E2A-4EB7-A3A9-4B06032FD7A5}</ProjectGuid>
+    <ProjectTypeGuids>{786C830F-07A1-408B-BD7F-6EE04809D6DB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <RootNamespace>Extensor</RootNamespace>
+    <AssemblyName>Extensor</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Profile111</TargetFrameworkProfile>
+    <PackOnBuild>true</PackOnBuild>
+    <PackageId>Extensor</PackageId>
+    <PackageVersion>1.2</PackageVersion>
+    <Authors>Joel R Sosa</Authors>
+    <NeutralLanguage>en-US</NeutralLanguage>
+    <Owners>Joel R Sosa</Owners>
+    <PackageProjectUrl>https://github.com/jrsosadev/Extensor</PackageProjectUrl>
+    <PackageReleaseNotes>V1.2 Include awesome extensions for the following types:  
+
+bool
+int
+double
+float
+long
+short
+string
+object
+IEnumerable&lt;T&gt;
+DateTime (my favorite so far)  
+
+Addtional documentation can be found in the project repo under https://github.com/jrsosadev/Extensor/blob/dev/Extensor/documentation/Extensor.xml
+
+</PackageReleaseNotes>
+    <PackageTags>c#, extension-methods,dotnet</PackageTags>
+    <Description>Extension methods to ease your everyday development life. </Description>
+    <PackageLicenseUrl>https://github.com/jrsosadev/Extensor/blob/master/LICENSE</PackageLicenseUrl>
+    <Summary>Extension methods to ease your everyday development life.</Summary>
+    <Title>Extensor</Title>
+    <ReleaseVersion>1.2</ReleaseVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Debug\Extensor.xml</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="StringExtensions.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="DoubleExtensions.cs" />
+    <Compile Include="IntExtensions.cs" />
+    <Compile Include="FloatExtensions.cs" />
+    <Compile Include="BoolExtensions.cs" />
+    <Compile Include="IEnumerableExtensions.cs" />
+    <Compile Include="DateTimeExtensions.cs" />
+    <Compile Include="ShortExtensions.cs" />
+    <Compile Include="ObjectExtensions.cs" />
+    <Compile Include="LongExtensions.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
+  <Import Project="packages\NuGet.Build.Packaging.0.2.0\build\NuGet.Build.Packaging.targets" Condition="Exists('packages\NuGet.Build.Packaging.0.2.0\build\NuGet.Build.Packaging.targets')" />
+</Project>
